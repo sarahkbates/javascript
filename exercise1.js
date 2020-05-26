@@ -178,6 +178,7 @@ function everyThird(lowerBound, upperBound){
 const foodArray = [ 'potatoes', 'tamales', 'lemon','strawberries','chocolate', 'pudding', {school : 'TEKcamp'} ];
 //access the value of the last element of the array and set it to a variable called school.  print the school variable to the console.
 function getLastElem(){
+    var food = foodArray[i];
     let school = foodArray[foodArray.length-1];
     console.log(school);
 
@@ -206,4 +207,7 @@ else{
 const operations = [];
 function doMath() {};
 
+}
+}
+}
 
