@@ -7,6 +7,20 @@
 
 //your code...
 
+function cToF(celcius){
+    var cTemp = celcius;
+    var cToFahr = cTemp * 9/5 + 32;
+    var message = cTemp + '\xB0C is' + CToFahr + '\cB0f.'
+    console.log(message);
+}
+
+function fToC(fahrenheit){
+    var fTemp = fahrenheit;
+    var FToCel = (fTemp - 32) * 5/9;
+    var message = fTemp + '\xB0F is' + fToCel + '\xB0C.';
+    console.log(message);
+}
+
 
 
 
@@ -18,17 +32,33 @@
 
 //your code...
 
+function voteable(age){
+    var age = age;
+    var ans = 'No';
+    if (age >= 18){
+        ans = 'Yes';
+    }
+    return (ans);
+}
+console.log(ans);
 
 
 
 
 
-
-/************************************************************* */
+//************************************************************* */
 // Problem 3:
 // Write a JavaScript function that converts a string to an array. Declare a string variable with "The five boxing wizards jump quickly." Use the split() method to turn the string into an array of strings. (Be sure you separate the string into words, not characters.) After you have finished, use the join() method to change the array back into a string.
 
 //your code...
+
+string_to_array = function (str){
+    return str.trim().split(" ");
+}
+console.log(string_to_array("The five boxing wizards jump quickly"));
+
+var myArray = [string_to_array];
+var myString = myArray.join(" ");
 
 
 
@@ -42,6 +72,15 @@
 
 //your code...
 
+function reverse_telephone(n){
+   let num = n;
+   n.toString();
+   n.split('');
+   n.reverse();
+   n.join('');
+   parseFloat(n);
+   n * Math.sign(n);
+
 
 
 
@@ -53,16 +92,37 @@
 //your code...
 
 
+function car(make, model, year, color){
+this.make = make;
+this.model = model;
+this.year = year;
+this.color = color;
+var myCar = new car ('Hyundai', 'Tuscon', '2017', 'White');
+}
+return myCar;
 
 
 
-
-/************************************************************* */
+//************************************************************* */
 // Problem 6:
 // Write a JavaScript function with a loop that will iterate from 0 to 15. Each iteration, the for loop will check if the current number is odd or even and display the output.
 
 
 //your code...
+
+function evenOrOdd(x){
+    for (var x = 0; x < 15; x ++){
+        if (x ===0){
+            console.log(x + " is even.");
+        }
+        else if (x % 2 === 0){
+            console.log(x + " is even.");
+        }
+        else{
+            console.log(x + " is odd.");
+        }
+    }
+}
 
 
 
@@ -72,7 +132,25 @@
 // Write a JavaScript function that iterates the integers from 1 to 100. For multiples of 3 print "TEK" instead of the number and for multiples of 5, print "camp." For numbers that are multiples of both 3 and 5, print "TEKcamp."
 
 //your code...
-
+function multOfThree(x){
+    for (var x = 0; x < 100; x ++){
+        if (x === 0){
+            console.log(x)
+        }
+        else if (x % 3 === 0 & x % 5 === 0){
+            console.log(TEKcamp)
+        }
+        else if(x % 3 === 0){
+            console.log(TEK);
+        }
+        else if (x % 5 === 0){
+            console.log(camp);
+        }
+        else{
+            console.log (x)
+        }
+    }
+}
 
 /************************************************************* */
 // Problem 8:
@@ -83,12 +161,26 @@ const nums = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
 
 //your code...
 
+function everyThird(lowerBound, upperBound){
+    var x = (lowerBound + 1) % 2;
+
+    var list = [];
+    var k = 0;
+
+    for (var i = lowerBound + x; i <= upperBound; i = i+6){
+        list[k] = i;
+        k++;
+    }
+    return list;
 
 
 // Problem 9:
 const foodArray = [ 'potatoes', 'tamales', 'lemon','strawberries','chocolate', 'pudding', {school : 'TEKcamp'} ];
 //access the value of the last element of the array and set it to a variable called school.  print the school variable to the console.
-
+function getLastElem(){
+    let school = foodArray[foodArray.length-1];
+    console.log(school);
+}
 const adjectiveArray = [ 'salty', 'spicy', 'sour', 'sweet', 'rich','creamy','amazing'];
 // Using both the foodArray and the adjectiveArray, make a
 // "for" loop that console.log()'s a sentence for each
