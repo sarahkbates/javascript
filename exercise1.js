@@ -180,11 +180,26 @@ const foodArray = [ 'potatoes', 'tamales', 'lemon','strawberries','chocolate', '
 function getLastElem(){
     let school = foodArray[foodArray.length-1];
     console.log(school);
-}
+
 const adjectiveArray = [ 'salty', 'spicy', 'sour', 'sweet', 'rich','creamy','amazing'];
 // Using both the foodArray and the adjectiveArray, make a
 // "for" loop that console.log()'s a sentence for each
 // corresponding value in the arrays. Add the word "is" or "are" depending on if the food is singular or plural.  "Potatoes are salty", "Lemon is sour".
+
+//convert array to a string
+for (let i = 0; i < foodArray.length; i++){
+    if ((typeof foodArray[i] === 'string')){
+        if (food.slice(food.legth-1)=== 's')
+        let adjective = adjectiveArray[i].toString();
+console.log(food + ' are' + adjectiveArray[i]);
+    }
+else{
+    console.log(foodArray[i].school + " is" + adjectiveArray[i]);
+}
+}
+
+//grab last letter of food array and check for plural
+
 
 /************************************************************* */
 // Bonus Assignment: Create 4 mathematical function expressions, add,subtract,multiply,divide.  put them in an array, and create a doMath() function that randomly does one of the 4 operations whenever it is run.  the doMath() function should print out what mathetmatical function was carried out.  The doMath() function should return the computed value of any operation performed.
