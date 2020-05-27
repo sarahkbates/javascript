@@ -4,13 +4,17 @@
 // Problem 1: Refactor the for() loop to be a while loop.
 //
 
-for(let i=0; i<10; i++) {
-    console.log(" the value of i in the loop is : " + i);
-}
+// for(let i=0; i<10; i++) {
+//     console.log(" the value of i in the loop is : " + i);
+// }
 
 
 //your code...
-
+let i = 0;
+while (i<10){
+    console.log(" the value of i in the loop is : " + i);
+    i++;
+}
 
 
 
@@ -20,24 +24,39 @@ for(let i=0; i<10; i++) {
 //use javascript to compute the value of the above statement. Each individual operation needs to be a function expression. run all the functions after defining them, and print the answer to the console.
 
 //your code...
-
+let sum = 30 + 2;
+let multiply = sum * 20;
+let divide = multiply / (10^2)
+console.log(divide);
 
 /************************************************************* */
 //Problem 3:
 //Determine whether the following values are "truthy" or "falsy".  console.log() the value, whether the value is 'truthy' or 'falsy', along with your reasoning why using String interpolation.
-// values : 
-// 20
-// 0
-// "zero";
-// const zero = 20;
-// null
-// "0"
-// !""
-// {}
+values : 
+20
+console.log(`20 is truthy because it's juut a value`)
+0
+console.log(`0 is falsy because 0 is always falsy!`)
+"zero";
+console.log(`"zero" is truthy because it's just a string.`)
+const zero = 20;
+console.log(`this one is also truthy, because you named the constant zero and then made it equal 20. that doesn't make helpful sense, but it's technically true`)
+null
+console.log(`null is always falsy!`)
+"0"
+console.log(`a string containing a single zero is truthy`)
+!""
+console.log(`this has an empty string, so it's falsy`)
+{}
+console.log(`an empty object is truthy, so this one is good`)
 // () => {console.log("hello TEKcamp!");
-// 125
-// undefined
-// ""
+console.log(`I think this is truthy, because it's a cunction that is printing out sonething? but you didn't name the fucntion, so mayube it's falsy?`)
+125
+console.log(`this is just a number, so it's truthy.`)
+undefined
+console.log(`undefined is always falsy!`)
+""
+console.log(`empty string again...still falsy!`)
 
 
 
@@ -46,40 +65,62 @@ for(let i=0; i<10; i++) {
 // Problem 4:
 // Refactor the following code using a switch statement:
 
+//const day = "friday";
+
+// //if(day === "monday") {
+//    // console.log("we got a long week ahead of us...");
+// } else if(day === "tuesday") {
+//     console.log("tuesday's are still beterr than mondays, but LONG way to go still");
+// } else if (day === "wednesday") {
+//     console.log("We are smack dab in the middle of the week");
+// } else if (day === "thursday") {
+//     console.log("Thursday night... the mood is right");
+// } else if (day === "friday") {
+//     console.log("TGIF.  Friday truly is the best day of the week!")
+// } else {
+//     console.log("It's a weekend!")
+// }
 const day = "friday";
-
-if(day === "monday") {
+switch (day){
+    case "monday":
     console.log("we got a long week ahead of us...");
-} else if(day === "tuesday") {
-    console.log("tuesday's are still beterr than mondays, but LONG way to go still");
-} else if (day === "wednesday") {
-    console.log("We are smack dab in the middle of the week");
-} else if (day === "thursday") {
-    console.log("Thursday night... the mood is right");
-} else if (day === "friday") {
-    console.log("TGIF.  Friday truly is the best day of the week!")
-} else {
-    console.log("It's a weekend!")
+    break;
+    case "tuesday":
+    console.log("tuesday's are still better than mondays, but LONG way to go still");
+    break;
+    case "wednesday":
+    console.log("We are smack dab in thd middle of the week");
+    break;
+    case "thursday":
+    console.log("Thursday night...the mood is right")
+    break;
+    case "friday":
+    console.log("TGIF. Friday is truly the best day of the week.");
+    break;
+    default:
+        console.log("It's a weekend!");
+
 }
-
-
 
 /************************************************************* */
 // Problem 5: Refactor the following functions to use a ternary expression:
-const age = 10;
-if (age > 21) console.log("adult"); else {
-    console.log("minor");
-}
+// const age = 10;
+// if (age > 21) console.log("adult"); else {
+//     console.log("minor");
+// }
 
-if (age > 13 && age < 19) console.log('teen'); else {
-    console.log("not a teenager");
-};
+// if (age > 13 && age < 19) console.log('teen'); else {
+//     console.log("not a teenager");
+// };
 
-if (age > 65) console.log("retired"); else {
-    console.log("still working...");
-}
+// if (age > 65) console.log("retired"); else {
+//     console.log("still working...");
+// }
 
-
+let age = 10;
+let isMinor = (age > 21) ? 'adult' : 'minor';
+let isTeen = (age > 13) && (age < 19) ? 'teen' : 'not a teenager';
+let isRetired = (age > 65) ? 'retired' : 'still working...'; 
 /************************************************************* */
 // Problem 6: Create an object literal that represents yourself.  set it to a variable that appropriately describes the object.  Include the following properties:
 /*
@@ -90,6 +131,7 @@ if (age > 65) console.log("retired"); else {
 -profession
 -education
 
+
 -add a method on your object, named learn. the learn method should print the value of the name property using the 'this' keyword.
 
 -add another method on your object of any action you want to perform, using some property that exists on your object, making sure to utilize the 'this' keyword.
@@ -97,13 +139,48 @@ if (age > 65) console.log("retired"); else {
 
 //your code...
 
+let me = {
+    name: "Sarah",
+    age: 25,
+    gender: "female",
+    hobbies: ["SCUBA Diving", "Tennis", "Yoga"],
+    profession: "teacher",
+    education: "BA From Austin College",
+    learn: function(){
+       return this.name;
+    },
+    job: function(){
+        return "She is a " + this.profession + ".";
+
+    }
+
+}
+console.log(me.learn());
+console.log(me.job());
 
 /************************************************************* */
 // Problem 6: Create an object literal that represents any object in the real world that you like.  Try to come up with a realistic set of properties and methods that would accurately describe that object.  In at least one of your methods, use the this keyword to refer back to one of the properties you defined on this object literal.  
 
 //your code...
+//i made object as pet instead of literal, because literal didn't make sense
 
-
+let pet = {
+    species: "dog",
+    name: "Tucker",
+    breed:"Brittany Spaniel",
+    color: "black and white",
+    favToy: "Floofy Ball",
+    introduce: function(){
+        return this.name + " is a " + this.species + ".";
+    },
+    details: function(){
+        return "He is a " + this.breed + " and is " + this.color + ".";
+    },
+    funFact: function(){
+        return this.name + "'s favorite toy is " + this.favToy + ".";
+    }
+}
+console.log(pet.introduce() + " " + pet.details() + " " + pet.funFact());
 
 /************************************************************* */
 //Problem 7: create a function that outputs your 3 favorite data types, with a message explaining why you like that data type.
