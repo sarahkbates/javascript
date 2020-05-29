@@ -118,9 +118,9 @@ switch (day){
 // }
 
 let age = 10;
-let isMinor = (age > 21) ? 'adult' : 'minor';
-let isTeen = (age > 13) && (age < 19) ? 'teen' : 'not a teenager';
-let isRetired = (age > 65) ? 'retired' : 'still working...'; 
+let isMinor = (age > 21) ? console.log('adult'): console.log('minor');
+let isTeen = (age > 13) && (age < 19) ? console.log('teen') : console.log('not a teenager');
+let isRetired = (age > 65) ? console.log('retired') : console.log('still working...'); 
 /************************************************************* */
 // Problem 6: Create an object literal that represents yourself.  set it to a variable that appropriately describes the object.  Include the following properties:
 /*
@@ -187,7 +187,13 @@ console.log(pet.introduce() + " " + pet.details() + " " + pet.funFact());
 
 //your code...
 
-
+function favDataTypes(){
+    const favNumber = 7;
+    const favString = 'I think strings are fun!'
+    const favArray= [0,1,2,3];
+    console.log(favNumber + " "+ favString + " " + favArray);
+}
+console.log(favDataTypes());
 
 /************************************************************* */
 //Bonus assignments:
