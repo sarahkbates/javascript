@@ -8,18 +8,18 @@
 //your code...
 
 function cToF(celcius){
-    var cTemp = celcius;
-    var cToFahr = cTemp * 9/5 + 32;
-    var message = cTemp + '\xB0C is' + CToFahr + '\cB0f.'
-    console.log(message);
+    let cTemp = celcius;
+    let cToFahr = cTemp * 9/5 + 32;
+    return(cToFahr);
 }
+console.log(cToF(100));
 
 function fToC(fahrenheit){
-    var fTemp = fahrenheit;
-    var FToCel = (fTemp - 32) * 5/9;
-    var message = fTemp + '\xB0F is' + fToCel + '\xB0C.';
-    console.log(message);
+    let fTemp = fahrenheit;
+    let fToCel = (fTemp - 32) * 5/9;
+    return (fToCel);
 }
+console.log(fToC(100));
 
 
 
@@ -32,15 +32,18 @@ function fToC(fahrenheit){
 
 //your code...
 
-function voteable(age){
-    var age = age;
-    var ans = 'No';
+function voteable(ageOfVoter){
+    let age = ageOfVoter;
+    let ans = 'No';
     if (age >= 18){
         ans = 'Yes';
-    }
-    return (ans);
+       
 }
-console.log(ans);
+return (ans);
+
+}
+console.log(voteable(13));
+
 
 
 
@@ -57,8 +60,10 @@ string_to_array = function (str){
 }
 console.log(string_to_array("The five boxing wizards jump quickly"));
 
-var myArray = [string_to_array];
-var myString = myArray.join(" ");
+arrayToString = function(arr){
+    return arr.join(" ");
+}
+console.log(arrayToString(string_to_array("The five boxing wizards jump quickly")));
 
 
 
@@ -73,13 +78,10 @@ var myString = myArray.join(" ");
 //your code...
 
 function reverse_telephone(n){
-   let num = n;
-   n.toString();
-   n.split('');
-   n.reverse();
-   n.join('');
-   parseFloat(n);
-   n * Math.sign(n);
+   n = n + "";
+   return n.split("").reverse().join("");
+}
+console.log(reverse_telephone(4693183038));
 
 
 
@@ -92,14 +94,17 @@ function reverse_telephone(n){
 //your code...
 
 
-function car(make, model, year, color){
-this.make = make;
-this.model = model;
-this.year = year;
-this.color = color;
-var myCar = new car ('Hyundai', 'Tuscon', '2017', 'White');
+let car = {
+make: 'Hyundai',
+model: 'Tuscon',
+year: 2017,
+color: "White",
+myCar: function(){
+    return this.make + " " + this.model + " " + this.year + " " + this.color
 }
-return myCar;
+}
+console.log(car.myCar());
+
 
 
 
@@ -111,7 +116,7 @@ return myCar;
 //your code...
 
 function evenOrOdd(x){
-    for (var x = 0; x < 15; x ++){
+    for (var x = 0; x <= 15; x ++){
         if (x ===0){
             console.log(x + " is even.");
         }
@@ -123,6 +128,7 @@ function evenOrOdd(x){
         }
     }
 }
+console.log(evenOrOdd());
 
 
 
@@ -135,22 +141,23 @@ function evenOrOdd(x){
 function multOfThree(x){
     for (var x = 0; x < 100; x ++){
         if (x === 0){
-            console.log(x)
+            console.log(x);
         }
         else if (x % 3 === 0 & x % 5 === 0){
-            console.log(TEKcamp)
+            console.log("TEKcamp");
         }
         else if(x % 3 === 0){
-            console.log(TEK);
+            console.log("TEK");
         }
         else if (x % 5 === 0){
-            console.log(camp);
+            console.log("camp");
         }
         else{
-            console.log (x)
+            console.log (x);
         }
     }
 }
+console.log(multOfThree());
 
 /************************************************************* */
 // Problem 8:
@@ -161,26 +168,18 @@ const nums = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
 
 //your code...
 
-function everyThird(lowerBound, upperBound){
-    var x = (lowerBound + 1) % 2;
-
-    var list = [];
-    var k = 0;
-
-    for (var i = lowerBound + x; i <= upperBound; i = i+6){
-        list[k] = i;
-        k++;
+    for (var i = 0; i <= nums.length; i = i+3){
+        console.log(i);
     }
-    return list;
 
 
 // Problem 9:
 const foodArray = [ 'potatoes', 'tamales', 'lemon','strawberries','chocolate', 'pudding', {school : 'TEKcamp'} ];
 //access the value of the last element of the array and set it to a variable called school.  print the school variable to the console.
-function getLastElem(){
-    var food = foodArray[i];
-    let school = foodArray[foodArray.length-1];
-    console.log(school);
+// function getLastElem(){
+//     let food = foodArray[i];
+//     let school = foodArray[foodArray.length-1];}
+//     console.log(school);
 
 const adjectiveArray = [ 'salty', 'spicy', 'sour', 'sweet', 'rich','creamy','amazing'];
 // Using both the foodArray and the adjectiveArray, make a
@@ -189,20 +188,22 @@ const adjectiveArray = [ 'salty', 'spicy', 'sour', 'sweet', 'rich','creamy','ama
 
 //convert array to a string
 for (let i = 0; i < foodArray.length; i++){
-    if ((typeof foodArray[i] === 'string')){
-        if (food.slice(food.legth-1)=== 's')
-        let adjective = adjectiveArray[i].toString();
-console.log(food + ' are' + adjectiveArray[i]);
-    }
-else{
-    console.log(foodArray[i].school + " is" + adjectiveArray[i]);
+    let char = foodArray[i].charAt(foodArray[i].length-1);
+        if (char === 's'){
+            console.log(foodArray[i] + " are " + adjectiveArray[i]);
+        }
+else {
+    console.log(foodArray[i] + " is " + adjectiveArray[i]);
 }
-}
+
+
+
 
 //grab last letter of food array and check for plural
 
 
 /************************************************************* */
 // Bonus Assignment: Create 4 mathematical function expressions, add,subtract,multiply,divide.  put them in an array, and create a doMath() function that randomly does one of the 4 operations whenever it is run.  the doMath() function should print out what mathetmatical function was carried out.  The doMath() function should return the computed value of any operation performed.
-const operations = [];
-function doMath() {};
+// const operations = [];
+
+}
